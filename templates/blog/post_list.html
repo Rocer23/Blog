@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список постів</title>
+</head>
+<body>
+    <h1>Список постів</h1>
+    <ul>
+        {% for post in posts_list %}
+            <li>
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.published_date }}</p>
+                <a href="{% url 'post_detail' post.id %}">Читати</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
